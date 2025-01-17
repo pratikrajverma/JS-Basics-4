@@ -40,7 +40,6 @@
 
 //................. Multiple Async ..........................
 
-
 //   setTimeout(() => {
 //     console.log("first code");
 //   }, 5000);
@@ -53,14 +52,13 @@
 //     console.log("Third code");
 //   }, 1000);
 
-
 ///............................. callback hell..................................
 
 // function first(callback) {
 //     setTimeout(() => {
 //         console.log("first code");
 
-//         callback()  
+//         callback()
 //     }, 5000);
 //     }
 
@@ -82,7 +80,31 @@
 //         third()
 //     })
 // });
-//  
+//
 
- 
+const banner = document.querySelector("#banner");
 
+const car = document.createElement("div");
+const para = document.createElement("p");
+const cross = document.createElement("button");
+
+function createbanner() {
+  cross.textContent = "x";
+
+  para.textContent = "Book a test Drive";
+
+  car.appendChild(para);
+  car.appendChild(cross);
+
+  banner.appendChild(car);
+
+  cross.addEventListener("click", () => {
+    banner.removeChild(car);
+  });
+}
+
+
+
+  setInterval(() => {
+    createbanner()
+  }, 5000);
